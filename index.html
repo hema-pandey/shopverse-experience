@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopVerse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Header/Navbar -->
+    <header>
+        <!-- LOGO  -->
+        <div class="sv-navbar">
+            <div class="sv-logo-box hover-glow">
+                <div class="sv-logo">ShopVerse</div>
+            </div>
+
+            <!-- Location Trigger -->
+        <div class="sv-location hover-glow" id="location-box">
+          <p class="sv-location-label">Deliver to</p>
+          <div class="sv-location-icon">
+          <i class="fa-solid fa-location-dot"></i>
+          <p class="sv-country" id="location-text">India</p>
+        </div>
+      </div>
+
+       <!-- Modal Popup   FOR LOCATION-->
+       <div class="modal-overlay" id="modal-overlay" style="display: none;">
+        <div class="modal-content">
+         <h3>Choose your location</h3>
+         <label for="modal-pincode">Enter your pincode:</label>
+         <input type="text" id="modal-pincode" placeholder="e.g. 201001" />
+         <button id="submit-pincode">Submit</button>
+      </div>
+    </div>
+
+<!-- NAVBAR SEARCHBAR  -->
+            <div class="sv-searchbar">
+             <select class="sv-category" id="category-select">
+              <option value="all">All</option>
+             </select>
+
+             <input type="text" class="sv-search-input" id="search-input" placeholder="Search ShopVerse" />
+
+             <div class="sv-search-icon" id="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+             </div>
+            </div>
+
+<!--  ACCOUNT AND SETTINGS -->
+          <div class="sv-user hover-glow" id="account-btn">
+           <p><span>Hello, Guest</span></p>
+           <p class="sv-user-action">Account & Settings</p>
+          </div>
+
+          <!-- 🔒 Sign-In Modal OR SIGN IN FOR -->
+          <div class="sv-modal" id="signin-modal">
+           <div class="sv-modal-content">
+           <span class="sv-close-btn" id="close-modal">&times;</span>
+
+            <h2>Sign in or create account</h2>
+            <label for="user-input">Enter mobile number or email</label>
+            <input type="text" id="user-input" placeholder="Mobile number or email" />
+
+             <button id="continue-btn">Continue</button>
+
+              <p class="sv-terms">
+              By continuing, you agree to ShopVerse's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.
+             </p>
+
+             <hr />
+
+            <p class="sv-business">Buying for work?</p>
+         <button id="business-btn">Create a free business account</button>
+       </div>
+     </div>
+
+<!-- RETURN ORDER -->
+            <div class="sv-orders hover-glow" id="returns-btn">
+             <p><span>Returns</span></p>
+             <p class="sv-user-action">& Orders</p>
+            </div>
+<!-- 📦 Returns Modal -->
+     <div class="sv-modal" id="returns-modal">
+        <div class="sv-modal-content">
+          <span class="sv-close-btn" id="close-returns">&times;</span>
+          <h3>No order to be returned</h3>
+          <p>You currently have no items eligible for return.</p>
+        </div>
+     </div>
+
+<!--  CART -->
+            <div class="sv-cart hover-glow">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Cart</span>
+            </div>
+        </div>
+        <!-- 🛒 Cart Modal -->
+         <div class="sv-modal" id="cart-modal">
+           <div class="sv-modal-content">
+              <span class="sv-close-btn" id="close-cart">&times;</span>
+              <h3>Your Cart</h3>
+               <ul id="cart-items-list"></ul>
+               <p id="cart-total">Total: ₹0</p>
+               <button id="checkout-btn">Proceed to Checkout</button>
+           </div>
+          </div>
+
+
+        <!-- Navigation Panel -->
+        <div class="sv-panel">
+           <div class="sv-panel-menu" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+
+
+
+            <div class="sv-panel-links hover-glow">
+                <p>Deals</p>
+                <p>Support</p>
+                <p>Wishlist</p>
+                <p>Gift Cards</p>
+                <p>Trending</p>
+                <p>New Arrivals</p>
+                <p>Mobiles</p>
+                <p>ShopVerse TV</p>
+                <p>Terms & Conditions</p>
+                <p>Privacy Policy</p>
+                <p>Help</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-msg">
+            <p>
+                Welcome to <strong>ShopVerse Global</strong> 🌍 — your gateway to futuristic shopping.  
+                For lightning-fast delivery and exclusive Indian deals, switch to  
+                <a href="#">ShopVerse India</a>.
+            </p>
+        </div>
+    </div>
+
+    <!-- Shop Section -->
+    <main class="shop-section">
+        <!-- Box 1 -->
+        <div class="box box1">
+            <div class="box-content">
+                <h2>Gaming Console</h2>
+                <div class="box-img" style="background-image: url('1.png');"></div>
+                <p>Shop gaming consoles</p>
+            </div>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="box box2">
+            <div class="box-content">
+                <h2>Home Essentials</h2>
+                <div class="box-image">
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('cleaning_tools.png');"></div>
+                        <p>Cleaning Tools</p>
+                    </div>
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('Home_Storage.png');"></div>
+                        <p>Home Storage</p>
+                    </div>
+                </div>
+                <div class="boxe">
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('Home_Decor.png');"></div>
+                        <p>Home Decor</p>
+                    </div>
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('Bedding.png');"></div>
+                        <p>Bedding</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="box box3">
+            <div class="box-content">
+                <h2>Fashion Deals</h2>
+                <div class="box-image">
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('jeans.png');"></div>
+                        <p>Jeans</p>
+                    </div>
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('tops.png');"></div>
+                        <p>Tops</p>
+                    </div>
+                </div>
+                <div class="boxe">
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('dresses.png');"></div>
+                        <p>Dresses</p>
+                    </div>
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('shoes.png');"></div>
+                        <p>Shoes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Box 4 -->
+        <div class="box box4">
+            <div class="box-content">
+                <h2>Festive Collection</h2>
+                <div class="box-img" style="background-image: url('image.png');"></div>
+                <p>Shop for Easter</p>
+            </div>
+        </div>
+
+        <!-- Box 5 -->
+        <div class="box box5">
+            <div class="box-content">
+                <h2>Home & Kitchen</h2>
+                <div class="box-image">
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('kitchen.jpg');"></div>
+                        <p>Kitchen</p>
+                    </div>
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('home_decor.jpg');"></div>
+                        <p>Home Decor</p>
+                    </div>
+                </div>
+                <div class="boxe">
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('dining1.jpg');"></div>
+                        <p>Dining</p>
+                    </div>
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('smart home.jpg');"></div>
+                        <p>Smart Home</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Box 6 -->
+        <div class="box box6">
+            <div class="box-content">
+                <h2>Home Refresh</h2>
+                <div class="box-image">
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('dining.png');"></div>
+                        <p>Dining</p>
+                    </div>
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('home.png');"></div>
+                        <p>Home</p>
+                    </div>
+                </div>
+                <div class="boxe">
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('kitchen.png');"></div>
+                        <p>Kitchen</p>
+                    </div>
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('health.png');"></div>
+                        <p>Health & Beauty</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Box 7 -->
+        <div class="box box7">
+            <div class="box-content">
+                <h2>Tech Zone</h2>
+                <div class="box-image">
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('Smartphone.png');"></div>
+                        <p>Smartphones</p>
+                    </div>
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('Headphone.png');"></div>
+                        <p>Headphones</p>
+                    </div>
+                </div>
+                <div class="boxe">
+                    <div class="tool">
+                        <div class="boimg" style="background-image: url('Watches.png');"></div>
+                        <p>Watches</p>
+                    </div>
+                    <div class="tool">
+    <div class="boimg" style="background-image: url('Tablet.png');"></div>
+    <p>Tablets</p>
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Box 8 -->
+        <div class="box box8">
+            <div class="box-content">
+                <h2>Gaming Accessories</h2>
+                <div class="box-img" style="background-image: url('game.webp');"></div>
+                <p>Level up your gaming</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+
+   <footer class="sv-footer">
+    <div class="footer-grid">
+        <!-- ShopVerse Info -->
+        <div class="footer-column">
+            <h3>ShopVerse</h3>
+            <p>Futuristic shopping for every lifestyle. Explore global trends, lightning-fast delivery, and exclusive Indian deals.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Returns & Refunds</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Shop Categories -->
+        <div class="footer-column">
+            <h4>Shop Categories</h4>
+            <ul>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">Home & Kitchen</a></li>
+                <li><a href="#">Gaming</a></li>
+            </ul>
+        </div>
+
+        <!-- Connect -->
+        <div class="footer-column">
+            <h4>Connect With Us</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>📧 support@shopverse.com</p>
+        </div>
+    </div>
+
+    <div class="footer-credit">
+        <p>© 2025 ShopVerse. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
